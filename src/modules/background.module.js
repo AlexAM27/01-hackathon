@@ -15,8 +15,9 @@ export class BackgroundModule extends Module {
     }
     trigger(){
         const color = this.getRandomColor();
-        console.log(color);
         document.body.style.background = color;
+        localStorage.setItem('backgroundColor', `${color}`);
+
     }
 
 }
