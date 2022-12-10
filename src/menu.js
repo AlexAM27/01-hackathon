@@ -1,14 +1,19 @@
-import {Menu} from './core/menu'
+import { Menu } from './core/menu'
 import { TestModule } from './modules/test.module';
 import { ClicksModule } from './modules/clicks.module';
+import { FigureModule } from './modules/figure.module';
+import { BackgroundModule } from './modules/background.module';
+import { TaimerModule } from './modules/taimer.module';
 
 export default class ContextMenu extends Menu {
   #moduleList
 
   constructor(selector) {
     super(selector);
-    this.#moduleList = [new ClicksModule('clicks', 'Счетчик кликов'),
-  new TestModule('test', 'Test')];
+    this.#moduleList = [new FigureModule('figure', 'Случайная фигура'),
+    new BackgroundModule('background', 'Изменить фон'),
+    new TaimerModule('timer', 'Обратный отсчет'),
+    new ClicksModule('clicks', 'Счетчик кликов')];
   }
 
   renderContextMenu() {
@@ -21,13 +26,13 @@ export default class ContextMenu extends Menu {
   }
 
   open(event) {
-    if(event.button === 2) {
+    if (event.button === 2) {
       this.el.classList.add('open');
       this.el.style.top = event.clientY + 'px';
       this.el.style.left = event.clientX + 'px';
-      if(!this.#isModuleListEmpty()) {
+      if (!this.#isModuleListEmpty()) {
         for (const module of this.#moduleList) {
-        this.add(module);
+          this.add(module);
         }
       }
     }

@@ -20,7 +20,7 @@ export class ClicksModule extends Module {
 
   createTimer(timeInSec) {
     const timerDiv = document.createElement('div');
-    timerDiv.classList.add('timer');
+    timerDiv.classList.add('timer-clicks');
 
     const timerHeader = document.createElement('p');
     timerHeader.classList.add('timer-header');
@@ -72,7 +72,7 @@ export class ClicksModule extends Module {
   }
 
   removeTimer() {
-    const timer = document.querySelector('.timer');
+    const timer = document.querySelector('.timer-clicks');
     timer.remove();
   }
 }
