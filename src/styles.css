@@ -40,3 +40,72 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.taimer_container{
+    display: flex;
+}
+
+.taimer{
+    padding: 30px;
+    background-color: rgb(84, 84, 84);
+    /* opacity: 0.6; */
+    color: rgba(255, 255, 255, 0.605);
+    /* border: 10px solid rgba(126, 123, 123, 0.895); */
+    border-radius: 20px;
+    box-shadow: inset rgba(255, 255, 255, 0.2) 8px 8px 18px 5px,
+                inset rgba(0, 0, 0, 0.5) -8px -8px 18px 5px;
+}
+
+
+.time_user{
+    border: none;
+    padding: 5px;
+    font-size: large;
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    opacity: 0.6;
+    background-color: rgba(84, 84, 84);
+    color: rgba(255, 255, 255);
+}
+
+.time_user::placeholder {
+    font-size: small;
+}
+
+.time_user:hover{
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 4px;
+}
+
+.time_user:focus{
+    outline: 0;
+}
+
+.taimer_button{
+    border: none;
+    margin-left: 5px;
+    padding: 5px;
+    font-size: large;
+    font-weight: bolder;
+    opacity: 0.6;
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    background-color: rgb(84, 84, 84);
+    color: white;
+}
+
+.taimer_button:hover{
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 4px;
+}
+
+.taimer_window{
+    margin-top: 10px;
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+    opacity: 0.6;
+}
+
