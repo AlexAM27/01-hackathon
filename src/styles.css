@@ -11,7 +11,8 @@ body {
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     width: 100%;
-    padding: 2rem;
+    /* padding: 2rem; */
+    padding: 0;
 }
 
 .menu {
@@ -109,3 +110,6 @@ body {
     opacity: 0.6;
 }
 
+canvas {
+    position: fixed;
+}
