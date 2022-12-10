@@ -1,12 +1,13 @@
 import {Menu} from './core/menu'
 import { TestModule } from './modules/test.module';
+import {BackgroundModule} from './modules/background.module';
 
 export default class ContextMenu extends Menu {
   #moduleList
 
   constructor(selector) {
     super(selector);
-    this.#moduleList = [new TestModule('testModul_1', 'Test Module 1'),
+    this.#moduleList = [new BackgroundModule('background', 'Изменить фон'),
     new TestModule('testModul_2', 'Test Module 2'),
     new TestModule('testModul_3', 'Test Module 3')];
   }
