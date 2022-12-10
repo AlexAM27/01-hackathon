@@ -1,5 +1,6 @@
 import { Menu } from './core/menu'
 import { TestModule } from './modules/test.module';
+import { ClicksModule } from './modules/clicks.module';
 import { FigureModule } from './modules/figure.module';
 import { BackgroundModule } from './modules/background.module';
 import { TaimerModule } from './modules/taimer.module';
@@ -9,16 +10,17 @@ export default class ContextMenu extends Menu {
 
   constructor(selector) {
     super(selector);
-    this.#moduleList = [new FigureModule('Figure', 'Случайная фигура'),
-    new BackgroundModule('Background', 'Изменить фон'),
-    new TaimerModule('timer', 'Обратный отсчет')];
+    this.#moduleList = [new FigureModule('figure', 'Случайная фигура'),
+    new BackgroundModule('background', 'Изменить фон'),
+    new TaimerModule('timer', 'Обратный отсчет'),
+    new ClicksModule('clicks', 'Счетчик кликов')];
   }
 
   renderContextMenu() {
-    window.addEventListener("mousedown", this.open.bind(this));
-    this.el.addEventListener('click', this.clickOnMenuItem.bind(this));
+    window.addEventListener('mousedown', this.open.bind(this));
+    this.el.addEventListener('click', this.#clickOnMenuItem.bind(this));
 
-    document.addEventListener("contextmenu", function (e) {
+    document.addEventListener('contextmenu', function(e) {
       e.preventDefault()
     });
   }
@@ -44,9 +46,9 @@ export default class ContextMenu extends Menu {
     this.el.innerHTML += module?.toHTML();
   }
 
-  clickOnMenuItem(event) {
+  #clickOnMenuItem(event) {
     const { target } = event;
-    const closestTarget = target.closest(".menu-item");
+    const closestTarget = target.closest('.menu-item');
     if (closestTarget) {
       const itemType = closestTarget.getAttribute('data-type');
       const module = this.#findElemInModuleList(itemType);
