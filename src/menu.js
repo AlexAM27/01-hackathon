@@ -1,21 +1,21 @@
 import {Menu} from './core/menu'
 import { TestModule } from './modules/test.module';
+import { ClicksModule } from './modules/clicks.module';
 
 export default class ContextMenu extends Menu {
   #moduleList
 
   constructor(selector) {
     super(selector);
-    this.#moduleList = [new TestModule('testModul_1', 'Test Module 1'),
-    new TestModule('testModul_2', 'Test Module 2'),
-    new TestModule('testModul_3', 'Test Module 3')];
+    this.#moduleList = [new ClicksModule('clicks', 'Счетчик кликов'),
+  new TestModule('test', 'Test')];
   }
 
   renderContextMenu() {
-    window.addEventListener("mousedown", this.open.bind(this));
-    this.el.addEventListener('click', this.clickOnMenuItem.bind(this));
+    window.addEventListener('mousedown', this.open.bind(this));
+    this.el.addEventListener('click', this.#clickOnMenuItem.bind(this));
 
-    document.addEventListener("contextmenu", function(e) {
+    document.addEventListener('contextmenu', function(e) {
       e.preventDefault()
     });
   }
@@ -41,9 +41,9 @@ export default class ContextMenu extends Menu {
     this.el.innerHTML += module?.toHTML();
   }
 
-  clickOnMenuItem(event) {
+  #clickOnMenuItem(event) {
     const { target } = event;
-    const closestTarget = target.closest(".menu-item");
+    const closestTarget = target.closest('.menu-item');
     if (closestTarget) {
       const itemType = closestTarget.getAttribute('data-type');
       const module = this.#findElemInModuleList(itemType);

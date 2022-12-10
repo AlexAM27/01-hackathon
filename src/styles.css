@@ -40,3 +40,22 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.timer {
+  color: #868e96;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: max-content;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.timer .timer-header {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.timer .timer-value {
+  font-size: 18px;
+  max-width: max-content;
+  margin: 0 auto;
+}
