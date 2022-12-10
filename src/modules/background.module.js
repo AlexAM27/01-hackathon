@@ -8,12 +8,14 @@ export class BackgroundModule extends Module {
         const letters = "0123456789ABCDEF";
         let color = "#";
         for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-        return color;
+            color += letters[Math.floor(Math.random() * 16)];
         }
+        return color;
+        
     }
     trigger(){
         const color = this.getRandomColor();
+        console.log(color);
         document.body.style.background = color;
     }
 
