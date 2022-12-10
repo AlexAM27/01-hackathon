@@ -1,14 +1,15 @@
-import {Menu} from './core/menu'
+import { Menu } from './core/menu'
 import { TestModule } from './modules/test.module';
-import {BackgroundModule} from './modules/background.module';
+import { FigureModule } from './modules/figure.module';
+import { BackgroundModule } from './modules/background.module';
 
 export default class ContextMenu extends Menu {
   #moduleList
 
   constructor(selector) {
     super(selector);
-    this.#moduleList = [new BackgroundModule('background', 'Изменить фон'),
-    new TestModule('testModul_2', 'Test Module 2'),
+    this.#moduleList = [new FigureModule('Figure', 'Случайная фигура'),
+    new BackgroundModule('Background', 'Изменить фон'),
     new TestModule('testModul_3', 'Test Module 3')];
   }
 
@@ -16,19 +17,19 @@ export default class ContextMenu extends Menu {
     window.addEventListener("mousedown", this.open.bind(this));
     this.el.addEventListener('click', this.clickOnMenuItem.bind(this));
 
-    document.addEventListener("contextmenu", function(e) {
+    document.addEventListener("contextmenu", function (e) {
       e.preventDefault()
     });
   }
 
   open(event) {
-    if(event.button === 2) {
+    if (event.button === 2) {
       this.el.classList.add('open');
       this.el.style.top = event.clientY + 'px';
       this.el.style.left = event.clientX + 'px';
-      if(!this.#isModuleListEmpty()) {
+      if (!this.#isModuleListEmpty()) {
         for (const module of this.#moduleList) {
-        this.add(module);
+          this.add(module);
         }
       }
     }
