@@ -2,6 +2,7 @@ import { Menu } from './core/menu'
 import { TestModule } from './modules/test.module';
 import { FigureModule } from './modules/figure.module';
 import { BackgroundModule } from './modules/background.module';
+import { TaimerModule } from './modules/taimer.module';
 
 export default class ContextMenu extends Menu {
   #moduleList
@@ -10,7 +11,7 @@ export default class ContextMenu extends Menu {
     super(selector);
     this.#moduleList = [new FigureModule('Figure', 'Случайная фигура'),
     new BackgroundModule('Background', 'Изменить фон'),
-    new TestModule('testModul_3', 'Test Module 3')];
+    new TaimerModule('timer', 'Обратный отсчет')];
   }
 
   renderContextMenu() {
