@@ -1,6 +1,7 @@
 import { Menu } from './core/menu'
 import { TestModule } from './modules/test.module';
 import { FigureModule } from './modules/figure.module';
+import { BackgroundModule } from './modules/background.module';
 
 export default class ContextMenu extends Menu {
   #moduleList
@@ -8,7 +9,7 @@ export default class ContextMenu extends Menu {
   constructor(selector) {
     super(selector);
     this.#moduleList = [new FigureModule('Figure', 'Случайная фигура'),
-    new TestModule('testModul_2', 'Test Module 2'),
+    new BackgroundModule('Background', 'Изменить фон'),
     new TestModule('testModul_3', 'Test Module 3')];
   }
 
