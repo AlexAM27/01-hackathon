@@ -1,4 +1,4 @@
-export const dictionary = [
+export const DICTIONARY = [
     {
         autor: "Джеффри Линдсей",
         text: `"Всегда будь уверен, будь осторожен, будь точен"`,

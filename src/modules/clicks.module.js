@@ -1,5 +1,5 @@
-import {Module} from '../core/module'
-import * as utils from '../utils'
+import {Module} from '../core/module';
+import * as utils from '../utils';
 
 export class ClicksModule extends Module {
   
@@ -8,18 +8,17 @@ export class ClicksModule extends Module {
   }
 
   trigger() {
-    this.renderTimer(10);
+    this.#renderTimer(10);
   }
 
-  renderTimer(timeInSec) {
+  #renderTimer(timeInSec) {
     if(!document.querySelector('.timer')) {
-      this.createTimer(timeInSec);
-      this.startCountDown(timeInSec);
+      this.#createTimer(timeInSec);
+      this.#startCountDown(timeInSec);
     }
   }
     
-
-  createTimer(timeInSec) {
+  #createTimer(timeInSec) {
     const timerDiv = document.createElement('div');
     timerDiv.classList.add('timer-clicks');
 
@@ -35,12 +34,11 @@ export class ClicksModule extends Module {
     document.body.append(timerDiv);
   }
 
-  startCountDown(timeInSec) {
+  #startCountDown(timeInSec) {
     const countDownTime = new Date().getTime() + timeInSec * 1000;
     const value = document.querySelector('.timer-value');
     let counter = -1;
     document.addEventListener("click", () => {
-      console.log('click');
       counter++;
     });
 
@@ -48,7 +46,7 @@ export class ClicksModule extends Module {
       const now = new Date().getTime();
       let distance = countDownTime - now;
       let seconds = Math.floor((distance + 1000) / 1000);
-      value.innerText = seconds + 'сек';
+      value.innerText = seconds + ' сек';
       
       if (distance < 0) {
         clearInterval(interval);
@@ -59,14 +57,12 @@ export class ClicksModule extends Module {
   }
 
   #createEnding(num) {
-    const strNum = String(num);
-    switch(strNum[strNum.length - 1]) {
-      case '1':
+    const lastDigitStr = String(num).slice(-1);
+    switch(true) {
+      case (lastDigitStr === '1'):
         return 'клик';
-        break;
-      case '2' || '3' || '4':
+      case (((lastDigitStr ==='2') || (lastDigitStr ==='3') || (lastDigitStr ==='4')) && ((num < 10) || (num > 20))):
         return 'клика';
-        break;
       default:
         return 'кликов';
     }
