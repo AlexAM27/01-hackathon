@@ -41,7 +41,7 @@ export class FigureModule extends Module {
                 ctx.lineTo(random(1, document.documentElement.clientWidth), random(1, document.documentElement.clientHeight));
                 ctx.lineTo(random(1, document.documentElement.clientWidth), random(1, document.documentElement.clientHeight));
                 ctx.fill();
-            }, 200);
+            }, 300);
         }
 
         function figure3() {

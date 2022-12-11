@@ -2,7 +2,7 @@ import '../styles.css'
 import { random } from '../utils'
 import { Module } from '../core/module'
 
-export class FigureModule extends Module {
+export class RandomSound extends Module {
     constructor(type, text) {
         super(type, text)
     }
