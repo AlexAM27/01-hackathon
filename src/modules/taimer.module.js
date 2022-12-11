@@ -56,7 +56,7 @@ export class TaimerModule extends Module {
               if (timeMinut <= 0) {
                 clearInterval(timer);
                 alert('Время вышло!');
-                utils.deleteDomElement('.taimer');
+                utils.deleteDomElement('.taimer_container');
               } else {
                 let hourStr = ('0' + hour).slice(-2);
                 let minutesStr = ('0' + minutes).slice(-2);
