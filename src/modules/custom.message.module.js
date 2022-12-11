@@ -1,6 +1,6 @@
 import { Module } from '../core/module';
 import { dictionary } from '../constants/dictionary';
-import { random } from '../utils'
+import * as utils from '../utils'
 
 
 export class CustomMessageModule extends Module {
@@ -9,7 +9,7 @@ export class CustomMessageModule extends Module {
     }
 
     createMessage() {
-        const numberQuote = random(0, dictionary.length - 1);
+        const numberQuote = utils.random(0, dictionary.length - 1);
         const objQuote = dictionary[numberQuote];
 
         const messageQuote = document.createElement("div");
@@ -27,9 +27,8 @@ export class CustomMessageModule extends Module {
     }
 
     showMessage() {
-        const thereQuote = document.querySelector(".quote");
         setTimeout(() => {
-            thereQuote.remove();
+            utils.deleteDomElement('.quote')
         }, 5000);
     }
 

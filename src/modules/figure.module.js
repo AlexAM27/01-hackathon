@@ -1,6 +1,6 @@
-import '../styles.css';
-import { random } from '../utils';
-import { Module } from '../core/module';
+import '../styles.css'
+import * as utils from '../utils'
+import { Module } from '../core/module'
 
 export class FigureModule extends Module {
     constructor(type, text) {
@@ -10,12 +10,13 @@ export class FigureModule extends Module {
     trigger() {
         let findCanvas = document.querySelector('#canvas');
         if (findCanvas) {
-            findCanvas.remove();
+          utils.deleteDomElement('#canvas');
         }
+        
         document.body.insertAdjacentHTML('beforeend', '<canvas id="canvas"></canvas>');
-        let x = random(1, document.documentElement.clientWidth);
-        let y = random(1, document.documentElement.clientHeight);
-        let color = `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+        let x = utils.random(1, document.documentElement.clientWidth);
+        let y = utils.random(1, document.documentElement.clientHeight);
+        let color = `rgb(${utils.random(0, 255)},${utils.random(0, 255)},${utils.random(0, 255)})`;
 
         let canvas = document.getElementById('canvas');
         let ctx = canvas.getContext('2d');
@@ -38,8 +39,8 @@ export class FigureModule extends Module {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.beginPath();
                 ctx.moveTo(x--, y--);
-                ctx.lineTo(random(1, document.documentElement.clientWidth), random(1, document.documentElement.clientHeight));
-                ctx.lineTo(random(1, document.documentElement.clientWidth), random(1, document.documentElement.clientHeight));
+                ctx.lineTo(utils.random(1, document.documentElement.clientWidth), utils.random(1, document.documentElement.clientHeight));
+                ctx.lineTo(utils.random(1, document.documentElement.clientWidth), utils.random(1, document.documentElement.clientHeight));
                 ctx.fill();
             }, 300);
         }
@@ -55,7 +56,7 @@ export class FigureModule extends Module {
             }, 20);
         }
 
-        switch (random(1, 3)) {
+        switch (utils.random(1, 3)) {
             case 1: figure1();
                 break;
             case 2: figure2();
