@@ -1,5 +1,5 @@
-import { Menu } from './core/menu'
-import { TestModule } from './modules/test.module';
+import {Menu} from './core/menu'
+import { CustomMessageModule } from './modules/custom.message.module';
 import { ClicksModule } from './modules/clicks.module';
 import { FigureModule } from './modules/figure.module';
 import { BackgroundModule } from './modules/background.module';
@@ -13,7 +13,8 @@ export default class ContextMenu extends Menu {
     this.#moduleList = [new FigureModule('figure', 'Случайная фигура'),
     new BackgroundModule('background', 'Изменить фон'),
     new TaimerModule('timer', 'Обратный отсчет'),
-    new ClicksModule('clicks', 'Счетчик кликов')];
+    new ClicksModule('clicks', 'Счетчик кликов'),
+    new CustomMessageModule('custom_message', 'Кастомное сообщение')];
   }
 
   renderContextMenu() {
