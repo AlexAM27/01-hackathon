@@ -1,4 +1,5 @@
 import {Module} from '../core/module'
+import * as utils from '../utils'
 
 export class ClicksModule extends Module {
   
@@ -7,7 +8,7 @@ export class ClicksModule extends Module {
   }
 
   trigger() {
-    this.renderTimer(5);
+    this.renderTimer(10);
   }
 
   renderTimer(timeInSec) {
@@ -52,7 +53,7 @@ export class ClicksModule extends Module {
       if (distance < 0) {
         clearInterval(interval);
         value.innerText = `Время вышло, ты сделал ${counter} ${this.#createEnding(counter)}`;
-        setTimeout(this.removeTimer, 3000);
+        setTimeout(() => {utils.deleteDomElement('.timer-clicks')}, 3000);
       }
     }, 1000);  
   }
@@ -71,8 +72,4 @@ export class ClicksModule extends Module {
     }
   }
 
-  removeTimer() {
-    const timer = document.querySelector('.timer-clicks');
-    timer.remove();
-  }
 }
