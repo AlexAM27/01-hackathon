@@ -1,4 +1,4 @@
-import { Menu } from './core/menu'
+import { Menu } from './core/menu';
 import { CustomMessageModule } from './modules/custom.message.module';
 import { ClicksModule } from './modules/clicks.module';
 import { FigureModule } from './modules/figure.module';
@@ -17,7 +17,6 @@ export default class ContextMenu extends Menu {
     new ClicksModule('clicks', 'Счетчик кликов'),
     new CustomMessageModule('custom_message', 'Кастомное сообщение'),
     new RandomSound('random_sound', 'Случайный звук')];
-
   }
 
   renderContextMenu() {

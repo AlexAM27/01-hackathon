@@ -1,5 +1,5 @@
-import './styles.css'
-import ContextMenu from './menu'
+import './styles.css';
+import ContextMenu from './menu';
 
 new ContextMenu('.menu').renderContextMenu();
 
