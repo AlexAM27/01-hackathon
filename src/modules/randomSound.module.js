@@ -1,11 +1,11 @@
-import '../styles.css'
-import { random } from '../utils'
-import { Module } from '../core/module'
+import '../styles.css';
+import { random } from '../utils';
+import { Module } from '../core/module';
 
 export class RandomSound extends Module {
     constructor(type, text) {
-        super(type, text)
-    }
+        super(type, text);
+    };
 
     trigger() {
 
@@ -25,13 +25,13 @@ export class RandomSound extends Module {
             "https://zvukogram.com/index.php?r=site/download&id=44558/mujskoy-golos-dlya-avtootvetchika.mp3",
             "https://zvukogram.com/index.php?r=site/download&id=44554/avtootvetchik-na-angliyskom-yazyike.mp3",
             "https://zvukogram.com/index.php?r=site/download&id=77792/oshibka-v-kompyutere.mp3",
-        ]
+        ];
 
         function soundBegin() {
             let audio = new Audio();
             audio.src = x[random(0, 15)];
             audio.autoplay = true;
-        }
-        soundBegin()
-    }
-}
+        };
+        soundBegin();
+    };
+};

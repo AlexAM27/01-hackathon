@@ -50,10 +50,12 @@ body {
     padding: 10px;
     position: absolute;
     text-align: center;
-    bottom: 20px;
-    right: 20px;
+    bottom: 50vh;
+    right: 50vh;
     display: block;
+
 }
+
 .timer-clicks {
     color: #868e96;
     border-radius: 5px;

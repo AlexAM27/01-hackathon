@@ -65,7 +65,7 @@ export class TaimerModule extends Module {
                 if (timeMinut <= 0) {
                     clearInterval(timer)
                     alert('Время вышло!')
-                    document.querySelector('.taimer').remove()
+                    document.querySelector('.taimer_container').remove()
 
 
 
