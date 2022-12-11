@@ -1,4 +1,5 @@
 import {Menu} from './core/menu'
+import { CustomMessageModule } from './modules/custom.message.module';
 import { TestModule } from './modules/test.module';
 
 export default class ContextMenu extends Menu {
@@ -7,8 +8,7 @@ export default class ContextMenu extends Menu {
   constructor(selector) {
     super(selector);
     this.#moduleList = [new TestModule('testModul_1', 'Test Module 1'),
-    new TestModule('testModul_2', 'Test Module 2'),
-    new TestModule('testModul_3', 'Test Module 3')];
+    new CustomMessageModule('custom_message', 'Кастомное сообщение')];
   }
 
   renderContextMenu() {
