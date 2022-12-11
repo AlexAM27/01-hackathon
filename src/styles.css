@@ -43,30 +43,30 @@ body {
 }
 
 .timer-clicks {
-  color: #868e96;
-  border-radius: 5px;
-  padding: 10px;
-  max-width: max-content;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    color: #868e96;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: max-content;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .timer-clicks .timer-header {
-  font-size: 16px;
-  margin-bottom: 12px;
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
 .timer-clicks .timer-value {
-  font-size: 18px;
-  max-width: max-content;
-  margin: 0 auto;
+    font-size: 18px;
+    max-width: max-content;
+    margin: 0 auto;
 }
 
-.taimer_container{
+.taimer_container {
     display: flex;
     margin: 30px;
 }
 
-.taimer{
+.taimer {
     padding: 30px;
     background-color: rgb(84, 84, 84);
     /* opacity: 0.6; */
@@ -74,11 +74,11 @@ body {
     /* border: 10px solid rgba(126, 123, 123, 0.895); */
     border-radius: 20px;
     box-shadow: inset rgba(255, 255, 255, 0.2) 8px 8px 18px 5px,
-                inset rgba(0, 0, 0, 0.5) -8px -8px 18px 5px;
+        inset rgba(0, 0, 0, 0.5) -8px -8px 18px 5px;
 }
 
 
-.time_user{
+.time_user {
     border: none;
     padding: 5px;
     font-size: large;
@@ -93,17 +93,17 @@ body {
     font-size: small;
 }
 
-.time_user:hover{
+.time_user:hover {
     cursor: pointer;
     border: 3px solid white;
     border-radius: 4px;
 }
 
-.time_user:focus{
+.time_user:focus {
     outline: 0;
 }
 
-.taimer_button{
+.taimer_button {
     border: none;
     margin-left: 5px;
     padding: 5px;
@@ -116,13 +116,13 @@ body {
     color: white;
 }
 
-.taimer_button:hover{
+.taimer_button:hover {
     cursor: pointer;
     border: 3px solid white;
     border-radius: 4px;
 }
 
-.taimer_window{
+.taimer_window {
     margin-top: 10px;
     text-align: center;
     font-size: xx-large;
@@ -132,4 +132,13 @@ body {
 
 canvas {
     position: fixed;
+}
+
+.audio {
+    bottom: 0;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    text-align: left;
+    z-index: 99;
 }
