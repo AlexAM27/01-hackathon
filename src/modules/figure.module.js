@@ -25,17 +25,11 @@ export class FigureModule extends Module {
         function figure1() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = color
-            if (x && y >= (document.documentElement.clientWidth / 2)) {
-                letsetInterval(function () {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.fillRect(x--, y--, x, y);
-                }, 20);
-            } else {
-                setInterval(function () {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.fillRect(x++, y++, x, y);
-                }, 20);
-            }
+
+            setInterval(function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillRect(x++, y++, x, y);
+            }, 20);
         }
 
         function figure2() {
@@ -47,26 +41,18 @@ export class FigureModule extends Module {
                 ctx.lineTo(random(1, document.documentElement.clientWidth), random(1, document.documentElement.clientHeight));
                 ctx.lineTo(random(1, document.documentElement.clientWidth), random(1, document.documentElement.clientHeight));
                 ctx.fill();
-            }, 200);
+            }, 300);
         }
 
         function figure3() {
             ctx.fillStyle = color
-            if (x && y > (document.documentElement.clientWidth / 2)) {
-                setInterval(function () {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.beginPath();
-                    ctx.arc(x--, y--, x / 4, x, Math.PI * 2, true);
-                    ctx.fill();
-                }, 20);
-            } else {
-                setInterval(function () {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.beginPath();
-                    ctx.arc(x++, y++, x / 4, x, Math.PI * 2, true);
-                    ctx.fill();
-                }, 20);
-            }
+
+            setInterval(function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(x++, y++, x / 4, x, Math.PI * 2, true);
+                ctx.fill();
+            }, 20);
         }
 
         switch (random(1, 3)) {
@@ -79,4 +65,3 @@ export class FigureModule extends Module {
         }
     }
 }
-

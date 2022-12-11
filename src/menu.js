@@ -1,27 +1,30 @@
-import {Menu} from './core/menu'
+import { Menu } from './core/menu'
 import { CustomMessageModule } from './modules/custom.message.module';
 import { ClicksModule } from './modules/clicks.module';
 import { FigureModule } from './modules/figure.module';
 import { BackgroundModule } from './modules/background.module';
 import { TaimerModule } from './modules/taimer.module';
+import { RandomSound } from './modules/randomSound.module';
 
 export default class ContextMenu extends Menu {
   #moduleList
 
   constructor(selector) {
     super(selector);
-    this.#moduleList = [new FigureModule('figure', 'Случайная фигура'),
+    this.#moduleList = [new FigureModule('figure', 'Случайная движущаяся фигура'),
     new BackgroundModule('background', 'Изменить фон'),
     new TaimerModule('timer', 'Обратный отсчет'),
     new ClicksModule('clicks', 'Счетчик кликов'),
-    new CustomMessageModule('custom_message', 'Кастомное сообщение')];
+    new CustomMessageModule('custom_message', 'Кастомное сообщение'),
+    new RandomSound('random_sound', 'Случайный звук')];
+
   }
 
   renderContextMenu() {
     window.addEventListener('mousedown', this.open.bind(this));
     this.el.addEventListener('click', this.#clickOnMenuItem.bind(this));
 
-    document.addEventListener('contextmenu', function(e) {
+    document.addEventListener('contextmenu', function (e) {
       e.preventDefault()
     });
   }

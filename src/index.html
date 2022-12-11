@@ -13,6 +13,20 @@
 
   <ul class="menu" id="menu"></ul>
 
+  <div class="audio">
+    <audio id="audio" autoplay="autoplay" id="autoplay"
+      src="https://ruo.morsmusic.org/load/2085354367/Queen_-_Another_One_Bites_The_Dust_(musmore.com).mp3" controls>
+    </audio>
+  </div>
+
+  <script>
+    let click = true;
+    document.onclick = function () {
+      if (click == true) audio.play()
+      click = false;
+    }
+  </script>
+
 </body>
 
 </html>
